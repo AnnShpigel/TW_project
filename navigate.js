@@ -1,87 +1,46 @@
 import React from 'react';
-import { FontAwesome } from '@expo/vector-icons';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Profile from "./components/Profile";
-import NotebookScreen from './components/NotebookScreen';
-import AddScreen from './components/AddScreen';
-import AddTwoScreen from './components/AddTwoScreen';
-import AddThreeScreen from './components/AddThreeScreen';
-import FinalScreen from './components/FinalScreen';
-import HomeScreen from './components/HomeScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from './components/login/LoginScreen';
+import RegisterScreen from './components/login/RegisterScreen';
+import VerificationScreen from './components/login/VerificationScreen';
 
-const HomeStack = createStackNavigator();
-const ProfileStack = createStackNavigator();
-const Tab = createBottomTabNavigator();
-  
+const Stack = createNativeStackNavigator();
 
-const HomeStackScreen = () => (
-  <HomeStack.Navigator screenOptions={{ headerShown: false }}>
-    <HomeStack.Screen name="Home" component={HomeScreen} />
-    <HomeStack.Screen name="Notebook" component={NotebookScreen} />
-    <HomeStack.Screen name="Add" component={AddScreen} />
-    <HomeStack.Screen name="AddTwo" component={AddTwoScreen} />
-    <HomeStack.Screen name="AddThree" component={AddThreeScreen} />
-    <HomeStack.Screen name="Final" component={FinalScreen} />
-  </HomeStack.Navigator>
-);
-
-const ProfileStackScreen = () => (
-  <ProfileStack.Navigator>
-    <ProfileStack.Screen name="Profile" component={Profile} />
-  </ProfileStack.Navigator>
-);
-
-const TAB_ICON = {
-    Modus: 'circle',
-    Profile: 'user',
-  };
-
-const createScreenOptions = ({ route, navigation }) => {
-    const iconName = TAB_ICON[route.name];
-  
-    return {
-      tabBarIcon: ({ size, color }) => (
-        <FontAwesome name={iconName} size={size} color={color} />
-      ),
-      tabBarItemStyle: {backgroundColor: '#d7d9d9'}
-    };
-  };
-
-export default function Navigate() {
+const AppNavigator = () => {
   return (
-    <NavigationContainer>
-        <Tab.Navigator
-            screenOptions={createScreenOptions}
-            tabBarOptions={{
-                activeTintColor: '#408F9E',
-                showLabel: false, // Additionally, set showLabel prop of tabBarOptions to false
-            }}
-        >
-        <Tab.Screen 
-            name="Modus" 
-            component={HomeStackScreen}
-            options={{
-                title: 'Модус',
-                headerStyle: { backgroundColor: '#408F9E' },
-                headerTintColor: '#fff',
-                headerTitleStyle: { fontWeight: 'bold' },
-                headerTitleAlign: 'center',
-            }}
-        />
-        <Tab.Screen 
-            name="Profile" 
-            component={Profile}
-            options={{
-                title: 'Профиль',
-                headerStyle: { backgroundColor: '#408F9E' },
-                headerTintColor: '#fff',
-                headerTitleStyle: { fontWeight: 'bold' },
-                headerTitleAlign: 'center',
-            }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator initialRouteName="Login">
+      <Stack.Screen 
+        name="Login" 
+        component={LoginScreen} 
+        options={{ 
+          headerShown: false, // Скрываем шапку для LoginScreen
+        }}/>
+
+      <Stack.Screen 
+        name="Register" 
+        component={RegisterScreen}
+        options={{
+        title: '', 
+        headerShadowVisible: false, // Убираем разделительную полосу для iOS
+        headerStyle: {
+        elevation: 0, // Убираем тень/полосу под шапкой для Android
+        shadowOpacity: 0, // Также помогает убрать тень под шапкой для iOS
+        },
+        }}/>
+
+      <Stack.Screen 
+        name="Verification" 
+        component={VerificationScreen}
+        options={{
+        title: '', 
+        headerShadowVisible: false, // Убираем разделительную полосу для iOS
+        headerStyle: {
+        elevation: 0, // Убираем тень/полосу под шапкой для Android
+        shadowOpacity: 0, // Также помогает убрать тень под шапкой для iOS
+        },
+        }}/>
+    </Stack.Navigator>
   );
-}
+};
+
+export default AppNavigator;

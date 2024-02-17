@@ -1,10 +1,11 @@
-import MainTab from './navigate';
-import { DataProvider } from './components/DataProvider';
+import React, { useState, useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigator from './navigate'; 
 
 export default function App() {
   return (
-    <DataProvider>
-      <MainTab/>
-    </DataProvider>
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import CustomInput from '../../components/inputs/LoginCustomInput';
 import CustomButton from '../../components/buttons/LoginCustomButton'; 
-import BackButton from '../../components/buttons/BackButton'; // Убедитесь в правильности пути
+import BackButton from '../../components/buttons/BackButton';
 
 import Image1 from '../../assets/images/RegisterImage.png';
 
@@ -12,7 +12,7 @@ const RegisterScreen = () => {
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
-      headerLeft: () => <BackButton onPress={() => navigation.goBack()} />,
+      headerLeft: () => <BackButton />,
     });
   }, [navigation]);
 

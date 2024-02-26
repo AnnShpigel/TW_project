@@ -1,11 +1,14 @@
 import React from 'react';
 import { TouchableOpacity, Image, StyleSheet } from 'react-native';
-import BackIcon from '../../assets/icons/BackIcon.png'; // Убедитесь, что путь к изображению верный
+import { useNavigation } from '@react-navigation/native';
+import BackIconImage from '../../assets/icons/BackIcon.png';
 
-const BackButton = ({ onPress }) => {
+const BackButton = () => {
+    const navigation = useNavigation();
+
     return (
-        <TouchableOpacity onPress={onPress} style={styles.button}>
-            <Image source={BackIcon} style={styles.image} />
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.button}>
+            <Image source={BackIconImage} style={styles.image} />
         </TouchableOpacity>
     );
 };
@@ -13,7 +16,7 @@ const BackButton = ({ onPress }) => {
 const styles = StyleSheet.create({
     button: {
         marginLeft: 30,
-        marginTop: 100, // Это может быть слишком большой отступ сверху, рассмотрите возможность его уменьшения
+        marginTop: 100, 
     },
     image: {
         width: 40,
@@ -21,4 +24,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default BackButton; // Исправлено здесь
+export default BackButton;

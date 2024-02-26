@@ -1,8 +1,8 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from './components/login/LoginScreen';
-import RegisterScreen from './components/login/RegisterScreen';
-import VerificationScreen from './components/login/VerificationScreen';
+import LoginScreen from './screens/login/LoginScreen';
+import RegisterScreen from './screens/login/RegisterScreen';
+import VerificationScreen from './screens/login/VerificationScreen';
 
 const Stack = createNativeStackNavigator();
 

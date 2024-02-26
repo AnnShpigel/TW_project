@@ -39,6 +39,18 @@ const AppNavigator = () => {
         shadowOpacity: 0, // Также помогает убрать тень под шапкой для iOS
         },
         }}/>
+
+<Stack.Screen 
+        name="ForgotPassword" 
+        component={ForgotPassScreen}
+        options={{
+        title: '', 
+        headerShadowVisible: false, 
+        headerStyle: {
+        elevation: 0, 
+        shadowOpacity: 0, 
+        },
+        }}/>
     </Stack.Navigator>
   );
 };

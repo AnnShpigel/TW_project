@@ -3,6 +3,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './screens/login/LoginScreen';
 import RegisterScreen from './screens/login/RegisterScreen';
 import VerificationScreen from './screens/login/VerificationScreen';
+import ForgotPassScreen from './screens/login/ForgotPassScreen';
+import CreateNewPassScreen from './screens/login/CreateNewPassScreen';
+import CreatedPassScreen from './screens/login/CreatedPassScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -40,7 +43,7 @@ const AppNavigator = () => {
         },
         }}/>
 
-<Stack.Screen 
+      <Stack.Screen 
         name="ForgotPassword" 
         component={ForgotPassScreen}
         options={{
@@ -51,6 +54,21 @@ const AppNavigator = () => {
         shadowOpacity: 0, 
         },
         }}/>
+
+      <Stack.Screen 
+        name="CreateNewPassScreen" 
+        component={CreateNewPassScreen} 
+        options={{ 
+          headerShown: false,
+        }}/>
+
+      <Stack.Screen 
+        name="CreatedPassScreen" 
+        component={CreatedPassScreen} 
+        options={{ 
+          headerShown: false,
+        }}/>
+
     </Stack.Navigator>
   );
 };

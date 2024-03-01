@@ -1,11 +1,13 @@
-import React, { useState, useRef } from 'react';
-import { StyleSheet, View, Text, TextInput } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import CustomButton from '../../components/buttons/LoginCustomButton';
 import BackButton from '../../components/buttons/BackButton';
 
 const VerificationScreen = () => {
   const navigation = useNavigation();
+  const [code, setCode] = useState(new Array(4).fill(''));
+  const inputRefs = useRef(code.map(() => React.createRef()));
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -13,16 +15,15 @@ const VerificationScreen = () => {
     });
   }, [navigation]);
 
-  const [code, setCode] = useState(['', '', '', '']);
-  const inputRefs = useRef(code.map(() => React.createRef()));
-
   const handleCodeInput = (text, index) => {
-    const newCode = [...code];
-    newCode[index] = text;
-    setCode(newCode);
+    if (/^\d$/.test(text) || text === '') { 
+      const newCode = [...code];
+      newCode[index] = text;
+      setCode(newCode);
 
-    if (text && index < 3) {
-      inputRefs.current[index + 1].focus();
+      if (text && index < 3) {
+        inputRefs.current[index + 1].focus();
+      }
     }
   };
 
@@ -37,13 +38,16 @@ const VerificationScreen = () => {
         {code.map((_, index) => (
           <TextInput
             key={index}
+            ref={(el) => inputRefs.current[index] = el}
             style={styles.codeInput}
             keyboardType="number-pad"
             maxLength={1}
             onChangeText={(text) => handleCodeInput(text, index)}
-            ref={inputRefs.current[index]}
             value={code[index]}
-            returnKeyType={index === 3 ? 'done' : 'next'}
+            returnKeyType="done"
+            autoCompleteType="off" // Отключить автозаполнение
+            textContentType="oneTimeCode" // Для iOS, использовать для кода подтверждения
+            autoCorrect={false} // Отключить автокоррекцию
           />
         ))}
       </View>

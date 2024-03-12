@@ -1,11 +1,12 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from './screens/login/LoginScreen';
-import RegisterScreen from './screens/login/RegisterScreen';
-import VerificationScreen from './screens/login/VerificationScreen';
-import ForgotPassScreen from './screens/login/ForgotPassScreen';
-import CreateNewPassScreen from './screens/login/CreateNewPassScreen';
-import CreatedPassScreen from './screens/login/CreatedPassScreen';
+import LoginScreen from '../screens/login/LoginScreen';
+import RegisterScreen from '../screens/login/RegisterScreen';
+import VerificationScreen from '../screens/login/VerificationScreen';
+import ForgotPassScreen from '../screens/login/ForgotPassScreen';
+import CreateNewPassScreen from '../screens/login/CreateNewPassScreen';
+import CreatedPassScreen from '../screens/login/CreatedPassScreen';
+import MainTabNavigator from './MainTabNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -68,6 +69,14 @@ const AppNavigator = () => {
         options={{ 
           headerShown: false,
         }}/>
+
+      <Stack.Screen 
+        name="Main"
+        component={MainTabNavigator}
+        options={{ 
+          headerShown: false,
+        }}
+      />
 
     </Stack.Navigator>
   );

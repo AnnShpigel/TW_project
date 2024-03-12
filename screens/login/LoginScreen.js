@@ -25,7 +25,7 @@ const LoginScreen = ({ navigation }) => {
 
       <CustomButton
         title="Log In"
-        onPress={() => {/* Обработчик нажатия для входа */}}
+        onPress={() => navigation.navigate('Main')}
       />
 
       <CustomButton

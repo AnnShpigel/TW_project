@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import CustomInput from '../../components/inputs/LoginCustomInput';
 import BackButton from '../../components/buttons/BackButton';
 
+// Компонент для забытого пароля
 const ForgotPassScreen = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
@@ -18,6 +19,7 @@ const ForgotPassScreen = () => {
     });
   }, [navigation]);
 
+  // Таймер для повторной отправки
   useEffect(() => {
     let timer;
     if (isCodeSent && countdown > 0) {
@@ -35,6 +37,7 @@ const ForgotPassScreen = () => {
     checkCodeComplete();
   }, [code]);
 
+  // Переход на след. страницу, если код верный, дополнить логикой проверки
   const checkCodeComplete = () => {
     if (code.every(singleCode => singleCode.trim() !== '')) {
       navigation.navigate('CreateNewPassScreen');
@@ -43,9 +46,10 @@ const ForgotPassScreen = () => {
 
   const handleSendCode = () => {
     setIsCodeSent(true);
-    // Здесь должна быть ваша логика отправки кода на электронную почту
+    // Здесь должна быть логика отправки кода на электронную почту
   };
 
+  // Обрабатывает ввод кода пользователя и смещает на следующий элемент
   const handleCodeInput = (text, index) => {
     if (/^\d$/.test(text) || text === '') {
     const newCode = [...code];

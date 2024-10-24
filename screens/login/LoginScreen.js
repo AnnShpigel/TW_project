@@ -5,6 +5,8 @@ import CustomButton from '../../components/buttons/LoginCustomButton';
 
 import Image1 from '../../assets/images/LoginImage.png';
 
+// Экран авторизации
+// Добавить проверку на соответствие данных в БД
 const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
@@ -14,13 +16,11 @@ const LoginScreen = ({ navigation }) => {
         placeholder="login/e-mail"
         keyboardType="email-address"
         autoCapitalize="none"
-        // Добавьте value и onChangeText если используете состояние
       />
 
       <CustomInput
         placeholder="password"
-        secureTextEntry // Делает текст в поле невидимым
-        // Добавьте value и onChangeText если используете состояние
+        secureTextEntry
       />
 
       <CustomButton
@@ -33,10 +33,8 @@ const LoginScreen = ({ navigation }) => {
         onPress={() => navigation.navigate('Register')}
       />
 
-      {/* Тонкая линия */}
       <View style={styles.lineStyle}></View>
 
-      {/* Ссылка "Забыли пароль?" */}
       <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
         <Text style={styles.forgotPassword}>Forgot password</Text>
       </TouchableOpacity>
@@ -44,7 +42,6 @@ const LoginScreen = ({ navigation }) => {
   );
 };
 
-// Стили компонента
 const styles = StyleSheet.create({
   container: {
     flex: 1,

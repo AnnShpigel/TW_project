@@ -13,13 +13,13 @@ const AddButton = ({ onPress }) => {
 
 const styles = StyleSheet.create({
     button: {
-        position: 'absolute', // Абсолютное позиционирование для размещения в любом месте экрана
-        right: 50, // Например, отступ справа
-        bottom: 50, // И отступ снизу
+        position: 'absolute', 
+        right: 40,
+        bottom: 40,
     },
     image: {
-        width: 53, // Установите нужные размеры для иконки
-        height: 53,
+        width: 70,
+        height: 70,
     },
 });
 

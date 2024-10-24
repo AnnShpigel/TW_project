@@ -5,17 +5,19 @@ import CustomInput from '../../components/inputs/LoginCustomInput';
 import CustomButton from '../../components/buttons/LoginCustomButton';
 import BackButton from '../../components/buttons/BackButton';
 
+// Создание нового пароля
 const CreateNewPassScreen = () => {
   const navigation = useNavigation();
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleResetPassword = () => {
-    // TODO: Add password reset logic here
+    // TODO: добавить логику сброса пароля здесь
     if (newPassword === confirmPassword) {
       navigation.navigate('CreatedPassScreen');
     } else {
-      // Handle password mismatch
+      // Обработать ситуацию, когда введенные пароли не совпадают
+      // Показать сообщение об ошибке и предложить повторить пароль
     }
   };
 

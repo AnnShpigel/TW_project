@@ -7,6 +7,7 @@ import BackButton from '../../components/buttons/BackButton';
 
 import Image1 from '../../assets/images/RegisterImage.png';
 
+// Компонент регистрации
 const RegisterScreen = () => {
   const navigation = useNavigation();
 
@@ -29,26 +30,22 @@ const RegisterScreen = () => {
       <CustomInput
         placeholder="login"
         autoCapitalize="none"
-        // Добавьте value и onChangeText если используете состояние
       />
 
       <CustomInput
         placeholder="e-mail"
         keyboardType="email-address"
         autoCapitalize="none"
-        // Добавьте value и onChangeText если используете состояние
       />
 
       <CustomInput
         placeholder="password"
         secureTextEntry
-        // Добавьте value и onChangeText если используете состояние
       />
 
       <CustomInput
         placeholder="confirm password"
         secureTextEntry
-        // Добавьте value и onChangeText если используете состояние
       />
 
       <CustomButton
@@ -68,9 +65,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   image: {
-    width: 300, // Установите подходящий размер
-    height: 300, // Установите подходящий размер
-    marginBottom: 20,
+    width: 250,
+    height: 250,
+    marginBottom: 10,
   },
 });
 

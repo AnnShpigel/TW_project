@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import CustomButton from '../../components/buttons/LoginCustomButton';
 
+// Компонент подтверждения изменения пароля
 const CreatedPassScreen = () => {
   const navigation = useNavigation();
 

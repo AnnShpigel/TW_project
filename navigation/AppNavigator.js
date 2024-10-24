@@ -10,6 +10,7 @@ import MainTabNavigator from './MainTabNavigator';
 
 const Stack = createNativeStackNavigator();
 
+// Основная навигация по экранам с регистрацией и функцией навигации MainTabNavigator по главному приложению 
 const AppNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Login">
@@ -17,7 +18,7 @@ const AppNavigator = () => {
         name="Login" 
         component={LoginScreen} 
         options={{ 
-          headerShown: false, // Скрываем шапку для LoginScreen
+          headerShown: false,
         }}/>
 
       <Stack.Screen 
@@ -25,10 +26,10 @@ const AppNavigator = () => {
         component={RegisterScreen}
         options={{
         title: '', 
-        headerShadowVisible: false, // Убираем разделительную полосу для iOS
+        headerShadowVisible: false,
         headerStyle: {
-        elevation: 0, // Убираем тень/полосу под шапкой для Android
-        shadowOpacity: 0, // Также помогает убрать тень под шапкой для iOS
+        elevation: 0,
+        shadowOpacity: 0,
         },
         }}/>
 
@@ -37,10 +38,10 @@ const AppNavigator = () => {
         component={VerificationScreen}
         options={{
         title: '', 
-        headerShadowVisible: false, // Убираем разделительную полосу для iOS
+        headerShadowVisible: false,
         headerStyle: {
-        elevation: 0, // Убираем тень/полосу под шапкой для Android
-        shadowOpacity: 0, // Также помогает убрать тень под шапкой для iOS
+        elevation: 0,
+        shadowOpacity: 0,
         },
         }}/>
 

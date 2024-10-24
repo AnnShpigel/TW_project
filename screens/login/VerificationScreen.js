@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import CustomButton from '../../components/buttons/LoginCustomButton';
 import BackButton from '../../components/buttons/BackButton';
 
+// Компонент верификации
 const VerificationScreen = () => {
   const navigation = useNavigation();
   const [code, setCode] = useState(new Array(4).fill(''));
@@ -15,6 +16,7 @@ const VerificationScreen = () => {
     });
   }, [navigation]);
 
+  // Обрабатывает ввод кода пользователя и смещает на следующий элемент
   const handleCodeInput = (text, index) => {
     if (/^\d$/.test(text) || text === '') { 
       const newCode = [...code];
@@ -27,6 +29,7 @@ const VerificationScreen = () => {
     }
   };
 
+  // Дополнить проверкой
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Verification</Text>
@@ -45,14 +48,14 @@ const VerificationScreen = () => {
             onChangeText={(text) => handleCodeInput(text, index)}
             value={code[index]}
             returnKeyType="done"
-            autoCompleteType="off" // Отключить автозаполнение
-            textContentType="oneTimeCode" // Для iOS, использовать для кода подтверждения
-            autoCorrect={false} // Отключить автокоррекцию
+            autoCompleteType="off"
+            textContentType="oneTimeCode"
+            autoCorrect={false}
           />
         ))}
       </View>
 
-      <CustomButton title="Verify" onPress={() => {/* Логика верификации */}} />
+      <CustomButton title="Verify" onPress={() => {}} />
     </View>
   );
 };

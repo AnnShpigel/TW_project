@@ -14,12 +14,12 @@ const NextButton = ({ onPress }) => {
 const styles = StyleSheet.create({
     button: {
         position: 'absolute',
-        right: 50, // Например, отступ справа
-        bottom: 50, // И отступ снизу
+        right: 42,
+        bottom: 42,
     },
     image: {
-        width: 60, // Установите нужные размеры для иконки
-        height: 60,
+        width: 65, 
+        height: 65,
     },
 });
 

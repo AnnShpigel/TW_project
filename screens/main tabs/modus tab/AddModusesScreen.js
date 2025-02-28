@@ -25,6 +25,7 @@ const AddModusesScreen = () => {
     }
   }, [moduses]);
 
+
   // Записывает модусы в контекст
   const handleAddModus = () => {
     const newModus = {

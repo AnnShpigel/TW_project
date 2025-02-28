@@ -19,6 +19,7 @@ const GoalsModusScreen = () => {
     });
   }, [navigation]);
 
+
   // Обновление названия цели
   const handleChangeGoal = (modusId, index, text) => {
     const updatedGoals = {...goals};

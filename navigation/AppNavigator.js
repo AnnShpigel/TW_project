@@ -16,14 +16,14 @@ const AppNavigator = () => {
     <Stack.Navigator initialRouteName="Login">
       <Stack.Screen 
         name="Login" 
-        component={LoginScreen} 
+        component={ LoginScreen } 
         options={{ 
           headerShown: false,
         }}/>
 
       <Stack.Screen 
         name="Register" 
-        component={RegisterScreen}
+        component={ RegisterScreen }
         options={{
         title: '', 
         headerShadowVisible: false,
@@ -35,7 +35,7 @@ const AppNavigator = () => {
 
       <Stack.Screen 
         name="Verification" 
-        component={VerificationScreen}
+        component={ VerificationScreen }
         options={{
         title: '', 
         headerShadowVisible: false,
@@ -47,7 +47,7 @@ const AppNavigator = () => {
 
       <Stack.Screen 
         name="ForgotPassword" 
-        component={ForgotPassScreen}
+        component={ ForgotPassScreen }
         options={{
         title: '', 
         headerShadowVisible: false, 
@@ -59,21 +59,21 @@ const AppNavigator = () => {
 
       <Stack.Screen 
         name="CreateNewPassScreen" 
-        component={CreateNewPassScreen} 
+        component={ CreateNewPassScreen } 
         options={{ 
           headerShown: false,
         }}/>
 
       <Stack.Screen 
         name="CreatedPassScreen" 
-        component={CreatedPassScreen} 
+        component={ CreatedPassScreen } 
         options={{ 
           headerShown: false,
         }}/>
 
       <Stack.Screen 
         name="Main"
-        component={MainTabNavigator}
+        component={ MainTabNavigator }
         options={{ 
           headerShown: false,
         }}

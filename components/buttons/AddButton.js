@@ -12,14 +12,14 @@ const AddButton = ({ onPress }) => {
 };
 
 const styles = StyleSheet.create({
+    image: {
+        width: 70,
+        height: 70,
+    },
     button: {
         position: 'absolute', 
         right: 40,
         bottom: 40,
-    },
-    image: {
-        width: 70,
-        height: 70,
     },
 });
 

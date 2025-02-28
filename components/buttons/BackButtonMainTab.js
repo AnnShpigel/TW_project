@@ -14,13 +14,13 @@ const BackButton = () => {
 };
 
 const styles = StyleSheet.create({
-    button: {
-        marginLeft: 15,
-        marginTop: 5, 
-    },
     image: {
         width: 40,
         height: 40,
+    },
+    button: {
+        marginLeft: 15,
+        marginTop: 5, 
     },
 });
 

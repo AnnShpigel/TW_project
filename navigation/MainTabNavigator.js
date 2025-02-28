@@ -22,7 +22,7 @@ function ModusStackNavigator() {
       <ModusStack.Navigator>
         <ModusStack.Screen
           name="ModusScreen"
-          component={ModusScreen}
+          component={ ModusScreen }
           options={{
             title: 'Модус',
             headerStyle: {
@@ -41,7 +41,7 @@ function ModusStackNavigator() {
         />
         <ModusStack.Screen
           name="CreateModusScreen"
-          component={CreateModusScreen}
+          component={ CreateModusScreen }
           options={{
             title: 'Создание модуса',
             headerStyle: {
@@ -59,7 +59,7 @@ function ModusStackNavigator() {
         />
         <ModusStack.Screen
           name="AddModusesScreen"
-          component={AddModusesScreen}
+          component={ AddModusesScreen }
           options={{
             title: 'Дополнение модуса',
             headerStyle: {
@@ -77,7 +77,7 @@ function ModusStackNavigator() {
         />
         <ModusStack.Screen
           name="GoalsModusScreen"
-          component={GoalsModusScreen}
+          component={ GoalsModusScreen }
           options={{
             title: 'Формирование целей',
             headerStyle: {
@@ -95,7 +95,7 @@ function ModusStackNavigator() {
         />
         <ModusStack.Screen
           name="ActivitiesModusScreen"
-          component={ActivitiesModusScreen}
+          component={ ActivitiesModusScreen }
           options={{
             title: 'Формирование шагов',
             headerStyle: {
@@ -121,7 +121,7 @@ function ProfileStackNavigator() {
     <ProfileStack.Navigator>
       <ProfileStack.Screen
         name="ProfileHome"
-        component={ProfileScreen}
+        component={ ProfileScreen }
         options={{
           title: 'Профиль',
           headerStyle: {
@@ -153,7 +153,7 @@ export default function MainTabNavigator() {
     >
       <Tab.Screen
         name="Modus"
-        component={ModusStackNavigator}
+        component={ ModusStackNavigator }
         options={{ 
           tabBarIcon: ({ focused }) => (
             <Image source={ModusIcon} style={{ width: 43, height: 43, tintColor: focused ? null : 'gray' }} />
@@ -162,7 +162,7 @@ export default function MainTabNavigator() {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileStackNavigator}
+        component={ ProfileStackNavigator }
         options={{ 
           tabBarIcon: ({ focused }) => (
             <Image source={ProfileIcon} style={{ width: 34, height: 34, tintColor: focused ? null : 'gray' }} />
